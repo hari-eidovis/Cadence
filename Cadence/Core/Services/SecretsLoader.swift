@@ -7,10 +7,6 @@ enum SecretsLoader {
         value(for: "GROQ_API_KEY")
     }
 
-    static var geminiAPIKey: String? {
-        value(for: "GEMINI_API_KEY")
-    }
-
     static func value(for key: String, bundle: Bundle = .main) -> String? {
         if let envValue = ProcessInfo.processInfo.environment[key], !envValue.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             return envValue

@@ -736,6 +736,15 @@ struct ProfilePlaceholderView: View {
                         .monospacedDigit()
                 }
             }
+
+            // App Review requires the privacy policy to be reachable inside the app (5.1.1).
+            // ponytail: policy is served from the public repo on main; swap the URL if it moves to a site.
+            HStack(spacing: 18) {
+                Link("Privacy Policy", destination: URL(string: "https://github.com/hari-eidovis/Cadence/blob/main/Docs/Legal/privacy-policy.md")!)
+                Link("Contact", destination: URL(string: "mailto:hari@eidovis.ai")!)
+            }
+            .font(.r(12, .semibold))
+            .padding(.top, 4)
         }
         .frame(maxWidth: .infinity)
         .padding(.vertical, 16)
